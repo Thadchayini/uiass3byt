@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Show Trackr</title>
+<link rel="shortcut icon" href="./images/fasion.ico">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <style type="text/css">
+        #Grid {
+            text-align: justify;
+            font-size: 0.1px;
+        }
+
+        #Grid:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        #Grid .mix {
+            display: none;
+            opacity: 0;
+            vertical-align: top;
+            /*margin-bottom: 20px;*/
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /*line-height: 200px;*/
+        }
+
+        #Grid .gap {
+            display: inline-block;
+            /*width: 200px;*/
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid" style="box-shadow: 0 0 5px black">
+
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand" href="/">Show<b>Trackr</b></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/home">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a href="/add">Add</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/logout">Logout</a></li>
+
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <br><br>
+    <div style="background-color:#f8f8f8;; margin-top:-20px; height: 150px">
+    <center>
+    <div style="padding: 20px 0px 20px 0px">
+      <a href="#">0-9</a> &nbsp
+      <a href="#" class="btn btn-link filter" data-filter="A">A</a> &nbsp
+      <a href="#" class="btn btn-link filter" data-filter="B">B</a> &nbsp
+       <a href="#" class="btn btn-link filter" data-filter="C">C</a> &nbsp
+       <a href="#" class="btn btn-link filter" data-filter="D">D</a> &nbsp
+        <a href="#" class="btn btn-link filter" data-filter="E">E</a> &nbsp
+        <a href="#" class="btn btn-link filter" data-filter="F">F</a> &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="G">G</a>&nbsp
+     <a href="#" class="btn btn-link filter" data-filter="H">H</a> &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="I">I</a> &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="J">J</a>&nbsp
+     <a href="#" class="btn btn-link filter" data-filter="K">K</a>&nbsp
+      <a href="#" class="btn btn-link filter" data-filter="L">L</a>  &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="M">M</a>&nbsp
+    <a href="#" class="btn btn-link filter" data-filter="N">N</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="O">O</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="P">P</a>  &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="Q">Q</a> &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="R">R</a> &nbsp
+     <a href="#" class="btn btn-link filter" data-filter="S">S</a>&nbsp
+    <a href="#" class="btn btn-link filter" data-filter="T">T</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="U">U</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="V">V</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="W">W</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="X">X</a> &nbsp
+    <a href="#" class="btn btn-link filter" data-filter="Y">Y</a>&nbsp
+    <a href="#" class="btn btn-link filter" data-filter="Z">Z</a><br><br>
+
+    <div class="container">
+      <button  class="btn filter" data-filter="action">Action </button>
+      <button  class="btn filter" data-filter="adventure">Adventure</button>
+      <button  class="btn filter" data-filter="animation">Animation</button>
+      <button  class="btn filter" data-filter="chidren">chidren</button>
+      <button  class="btn filter" data-filter="comedy">comedy</button>
+      <button  class="btn filter" data-filter="crime">crime</button>
+      <button  class="btn filter" data-filter="documentary">documentary</button>
+      <button  class="btn filter" data-filter="drama">drama</button>
+      <button  class="btn filter" data-filter="family">family</button>
+      <button  class="btn filter" data-filter="fantasy">fantasy</button>
+      <button  class="btn filter" data-filter="food">food</button>
+      <button  class="btn filter" data-filter="home and garden">home and garden</button>
+      <button  class="btn filter" data-filter="horror">horror</button>
+      <br>
+
+      <button  class="btn filter" data-filter="mini-series">mini-series</button>
+      <button  class="btn filter" data-filter="mystory">mystory</button>
+      <button  class="btn filter" data-filter="reality">reality</button>
+      <button  class="btn filter" data-filter="romance">romance</button>
+      <button  class="btn filter" data-filter="sci-fi">sci-fi</button>
+      <button  class="btn filter" data-filter="sport">sport</button>
+      <button  class="btn filter" data-filter="supense">supense</button>
+      <button  class="btn filter" data-filter="talk show">talk show</button>
+      <button  class="btn filter" data-filter="thriller">thriller</button>
+      <button  class="btn filter" data-filter="travel">travel</button>
+
+    </div>
+
+
+    </div>
+
+    </div>
+
+    </div>
+    <br><br>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1> Top 12 Shows </h1>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+
+                </div>
+                <!-- /.col-lg-6 --
+</div><!-- /.row -->
+            </div>
+
+
+
+                  <div class="panel-body" id="Grid">
+
+
+
+                  <div class="col-xs-4 col-md-3 mix action   G">
+                    <a href="showtrackr.html" class="thumbnail">
+                      <img src="./images/a.png" alt="..." ><br><h5 align="center">Game of Thorones</h5> <h5 align="center">Episodes:84</h5>
+                    </a>
+
+
+
+                  </div>
+                  <div class="col-xs-4 col-md-3 mix action animation suspense B">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/b.jpg" alt="..." height="250" width="150"><br><h5 align="center">Breaking Bad</h5><h5 align="center">Episode:79</h5>
+                    </a>
+
+
+
+                  </div>
+                  <div class="col-xs-4 col-md-3  mix action thriller D ">
+                    <a href="#" class="thumbnail" >
+                      <img src="./images/c.jpg" alt="..." ><br><h5 align="center">Dexter</h5><h5 align="center">Episodes:125</h5>
+                    </a>
+
+
+
+                  </div>
+                  <div class="col-xs-4 col-md-3 mix   family H">
+                    <a href="#" class="thumbnail" height="200" width="100">
+                      <img src="./images/d.jpg" alt="..." ><br><h5 align="center">How I Met Your Mother</h5><h5 align="center">Episodes:219</h5>
+                    </a>
+                  </div>
+
+
+
+
+
+                  <div class="col-xs-4 col-md-3 mix crime action D">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/e.jpeg" alt="..."><br><h5 align="center">Descendants of the Sun</h5><h5 align="center">Episodes:84</h5>
+                    </a>
+                  </div>
+
+
+                  <div class="col-xs-4 col-md-3 mix crime  mystory H">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/f.jpeg" alt="..." ><br><h5 align="center">Home</h5><h5 align="center">Episodes:75</h5>
+                    </a>
+                  </div>
+
+
+                  <div class="col-xs-4 col-md-3 mix documentary C">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/g.jpeg" alt="..."><br><h5 align="center">CROWN</h5><h5 align="center">Episodes:125</h5>
+                    </a>
+                  </div>
+
+
+
+
+                  <div class="col-xs-4 col-md-3 mix drama sport F">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/h.jpeg" alt="..."><br><h5 align="center">FREAKS AND GEEKS</h5><h5 align="center">Episodes:219</h5>
+                    </a>
+                  </div>
+
+
+
+
+
+                  <div class="col-xs-4 col-md-3 mix drama sport D">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/i.jpeg" alt="..."><br><h5 align="center">Do AND WALK EMPIRE</h5><h5 align="center">Episodes:84</h5>
+                    </a>
+
+
+
+                  </div>
+                  <div class="col-xs-4 col-md-3 mix drama sport B">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/j.jpeg" alt="..."><br><h5 align="center">BETTER CALL</h5><h5 align="center">Episodes:75</h5>
+                    </a>
+
+
+                  </div>
+                  <div class="col-xs-4 col-md-3 mix drama children G">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/k.jpeg" alt="..."><br><h5 align="center">glee</h5><h5 align="center">Episodes:125</h5>
+                  </a>
+
+
+                </div><div class="col-xs-4 col-md-3 mix action thriller S">
+                    <a href="#" class="thumbnail">
+                      <img src="./images/l.jpeg" alt="..."><br><h5 align="center">STRANGER THINGS</h5><h5 align="center">Episodes:219</h5>
+                    </a>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mixitup.min.js "></script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            $('#Grid').mixitup();
+        });
+    </script>
+
+</body>
+
+</html>
