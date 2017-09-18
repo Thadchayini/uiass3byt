@@ -51,37 +51,46 @@
         <li><a href="/logout">logout</a></li>
         <!-- <li><a href="/signup">Sign Up</a></li> -->
       </ul>
+
+
+
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container-fluid" style="box-shadow: 0 0 4px black;">
 
-<div class="panel panel-default" style="margin: 0px 70px 0px 70px">
-  <div class="panel-heading">
-    <h2 class="panel-title"> <b>ADD TV SHOW</b></h2>
-    <div class="form-group">
-         <!-- <input type="text" class="form-control" placeholder="Search"> -->
-    </div>
+
+
+
+
+
+
+
 <div class="thumbnail" class="col-">
 <div class="container">
   <!-- <h2><b>ADD TV SHOW</b></h2> -->
-  <form action="/action_page.php">
-    <div class="form-group">
-      <label for="email">Name</label>
-      <input type="text" class="form-control" id="tv show" placeholder="Add TV show">
+  <form action="/add">
+    <div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Add TV Show</div>
+    <div class="panel-body">
+      <form class="form" method="post" ng-submit="addShow()" name="addForm">
+        <div class="form-group" ng-class="{ 'has-success' : addForm.showName.$valid && addForm.showName.$dirty, 'has-error' : addForm.showName.$invalid && addForm.showName.$dirty }">
+          <input class="form-control" type="text" name="showName" ng-model="showName" placeholder="Enter TV show name" required autofocus>
+          <div class="help-block text-danger" ng-if="addForm.showName.$dirty" ng-messages="addForm.showName.$error">
+            <div ng-message="required">TV show name is required.</div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit" ng-disabled="addForm.$invalid">Add</button>
+      </form>
     </div>
-
-    <p id="test1"></p>
-
-
-
-    <button type="submit" class="btn btn-info" id="b1">Add</button>
-
+  </div>
+</div>
 
   </form>
 </div>
 </div>
-</div>
-</div>
+
+
 </body>
 </html>

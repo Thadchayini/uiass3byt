@@ -23,6 +23,11 @@ module.exports = function(app, passport) {
   	});
 
 
+
+    app.get('/subscribe', function(req, res) {
+      res.render('subscribe.ejs'); // load the index.ejs file
+    });
+
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
         req.logout();
@@ -76,7 +81,7 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
-    // twitter --------------------------------
+     /// twitter --------------------------------
 
         // send to twitter to do the authentication
         app.get('/auth/twitter', passport.authenticate('twitter', { scope : 'email' }));
@@ -127,7 +132,7 @@ module.exports = function(app, passport) {
                 failureRedirect : '/'
             }));
 
-    
+
 
 
     // google ---------------------------------
@@ -150,36 +155,36 @@ module.exports = function(app, passport) {
 // user account will stay active in case they want to reconnect in the future
 
     // local -----------------------------------
-    app.get('/unlink/local', isLoggedIn, function(req, res) {
-        var user            = req.user;
-        user.local.email    = undefined;
-        user.local.password = undefined;
-        user.save(function(err) {
-            res.redirect('/profile');
-        });
-    });
-
-    // facebook -------------------------------
-    app.get('/unlink/facebook', isLoggedIn, function(req, res) {
-        var user            = req.user;
-        user.facebook.token = undefined;
-        user.save(function(err) {
-            res.redirect('/profile');
-        });
-    });
-
-
-
-    // google ---------------------------------
-    app.get('/unlink/google', isLoggedIn, function(req, res) {
-        var user          = req.user;
-        user.google.token = undefined;
-        user.save(function(err) {
-            res.redirect('/profile');
-        });
-    });
-
-
+//     app.get('/unlink/local', isLoggedIn, function(req, res) {
+//         var user            = req.user;
+//         user.local.email    = undefined;
+//         user.local.password = undefined;
+//         user.save(function(err) {
+//             res.redirect('/profile');
+//         });
+//     });
+//
+//     // facebook -------------------------------
+//     app.get('/unlink/facebook', isLoggedIn, function(req, res) {
+//         var user            = req.user;
+//         user.facebook.token = undefined;
+//         user.save(function(err) {
+//             res.redirect('/profile');
+//         });
+//     });
+//
+//
+//
+//     // google ---------------------------------
+//     app.get('/unlink/google', isLoggedIn, function(req, res) {
+//         var user          = req.user;
+//         user.google.token = undefined;
+//         user.save(function(err) {
+//             res.redirect('/profile');
+//         });
+//     });
+//
+//
 };
 
 // route middleware to ensure user is logged in
